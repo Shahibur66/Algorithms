@@ -13,9 +13,7 @@ void findLCS(char *X, char *Y, int XLen, int YLen) {
   int L[XLen + 1][YLen + 1];
   int r, c, i;
 
-  /*
-   * find the length of the LCS
-   */
+
   for(r = 0; r <= XLen; r++) {
 
     for(c = 0; c <= YLen; c++) {
@@ -35,20 +33,13 @@ void findLCS(char *X, char *Y, int XLen, int YLen) {
     }
   }
 
-  /*
-   * Print LCS
-   */
+
   r = XLen;
   c = YLen;
   i = L[r][c];
 
   char LCS[i+1];
 
-  /*
-   * setting the NULL character at the end of LCS character array.
-   * as we know in C programming language, NULL character is used
-   * to denote the end of a string
-   */
   LCS[i] = '\0';
 
   while(r > 0 && c > 0) {
@@ -73,17 +64,16 @@ void findLCS(char *X, char *Y, int XLen, int YLen) {
 
   }
 
-  //print result
+
   printf("Length of the LCS: %d\n", L[XLen][YLen]);
   printf("LCS: %s\n", LCS);
 }
 
 int main(void) {
-  //the two sequences
+	
   char X[] = "ABCF";
   char Y[] = "ACF";
 
-  //length of the sequences
   int XLen = strlen(X);
   int YLen = strlen(Y);
 
